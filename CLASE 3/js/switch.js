@@ -1,3 +1,4 @@
+//OPERADOR SWITCH
 const metodoPago = "efectivo";
 
 switch (metodoPago){
