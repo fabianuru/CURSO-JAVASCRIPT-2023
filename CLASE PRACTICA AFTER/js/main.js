@@ -6,14 +6,33 @@ let energiaSuperman = 100;
 
 let round = 0
 
-while(energiaGoku > 0 && energiaSuperman > 0) {
+function calcularGolpe (){
+    return Math.ceil(Math.random() * (MAX_POWER - MIN_POWER )+ MIN_POWER);
+}
+
+// //FUNCION FLECHA
+// let calcularGolpe = () => Math.ceil(Math.random() * (MAX_POWER - MIN_POWER )+ MIN_POWER);
+
+function ambosVivos() {
+    return (energiaGoku > 0) && (energiaSuperman > 0);
+}
+
+function gokuSigueVivo() {
+    return energiaGoku>0
+}
+
+
+while(ambosVivos()) {
 
 //round = round +1;
 round += 1;
 //round++
 
-let golpeGoku = Math.ceil(Math.random() * (MAX_POWER - MIN_POWER )+ MIN_POWER);
-let golpeSuperman= Math.ceil(Math.random() * (MAX_POWER - MIN_POWER )+ MIN_POWER);
+// let golpeGoku = Math.ceil(Math.random() * (MAX_POWER - MIN_POWER )+ MIN_POWER);
+// let golpeSuperman= Math.ceil(Math.random() * (MAX_POWER - MIN_POWER )+ MIN_POWER);
+
+let golpeGoku = calcularGolpe();
+let golpeSuperman = calcularGolpe();
 
 console.log ("----------Round " + round + "----------");
 
@@ -43,7 +62,7 @@ if(golpeGoku === golpeSuperman){
 }
 
 console.log("------------------- Ganador ------------------- ")
-if (energiaGoku >0 ){
+if (gokuSigueVivo()){
     console.log ("Gokú es el ganador");
     document.write ('<div class= "ganador"><img src="assets/winGoku.jpg"></div>');
 
