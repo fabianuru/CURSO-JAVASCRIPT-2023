@@ -1,1 +1,0 @@
-console.log("Bienvenid@ a la primera entrega de Fabián Hirigoyen")
